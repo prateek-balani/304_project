@@ -10,14 +10,18 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<%@ include file="jdbc.jsp" %>
 
 
 
 <h1>Order List</h1>
 
 <%
-	// Load driver class
+String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
+String uid = "sa";
+String pw = "304#sa#pw";
+//Note: Forces loading of SQL Server driver
+try
+{	// Load driver class
 	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 	try(Connection con = DriverManager.getConnection(url, uid, pw)){
 		if(con!= null){
@@ -57,7 +61,7 @@
 
  }
 }
-
+}
 catch (java.lang.ClassNotFoundException e)
 {
 	out.println("ClassNotFoundException: " +e);

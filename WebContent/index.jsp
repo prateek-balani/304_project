@@ -40,6 +40,8 @@
     </style>
 </head>
 <body>
+<%@ include file="jdbc.jsp" %>
+
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
