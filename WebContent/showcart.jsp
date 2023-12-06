@@ -38,7 +38,7 @@
                 <th>Quantity</th>
                 <th>Price</th>
                 <th>Subtotal</th>
-                <th>Update Quantity</th>
+                
                 <th>Remove</th>
             </tr>
         </thead>
@@ -75,7 +75,7 @@
             <% } %>
                 <tr>
                     <td colspan="4" align="right"><b>Order Total: </b></td>
-                    <td align="right"><%= currFormat.format(total) %></td>
+                    <td align="right"><%= currFormat.format(total) %></td> 
                 </tr>
         </tbody>
     </table>

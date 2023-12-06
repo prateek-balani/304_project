@@ -34,5 +34,7 @@ else
 	productList.put(id,product);
 
 session.setAttribute("productList", productList);
+
+response.sendRedirect("showcart.jsp");
 %>
-<jsp:forward page="showcart.jsp" />
+
