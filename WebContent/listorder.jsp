@@ -31,7 +31,7 @@ try
 			
 				try(ResultSet rst = pmt.executeQuery()) {
                     out.println("<h2>Order Summary Information:</h2>");
-                    out.println("<table border='1'>");
+                    out.println("<table class='table table-striped'>");
                     out.println("<tr><th>Order ID</th><th>Customer ID</th><th>Order Date</th><th>First Name</th><th>Last Name</th><th>Total Amount</th></tr>");
 
 					NumberFormat currFormat = NumberFormat.getCurrencyInstance();
