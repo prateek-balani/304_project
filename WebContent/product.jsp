@@ -52,7 +52,6 @@
                 <img src='<%= productImageURL %>' class="card-img-top" alt='Product Image'>
             <% } %>
 
-            <img src='displayImage.jsp?id=<%= productId %>' class="card-img-top" alt=''>
             <h4 class="card-text">Description: <%= productDesc %></h4>
             <h4 class="card-text">Price: <%= currFormat.format(productPrice) %></h4>
             <a href='addcart.jsp?id=<%= productId %>&name=<%= URLEncoder.encode(productName, "UTF-8") %>&price=<%= productPrice %>' class='btn btn-success'>Add to Cart</a>

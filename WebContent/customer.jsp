@@ -31,8 +31,10 @@ try (Connection con = DriverManager.getConnection(url, uid, pw);
 	out.println("<table border='1'>");
 
 	int customerId =  0;
-	while(rst.next())	{
+	while(rst.next())	{ 
+
 		customerId = rst.getInt("customerId");
+        
         out.println("<h2>Customer Profile</h2>");
         out.println("<table class='table table-striped'>");
         out.println("<tr><td><b>Customer ID:</b></td><td>" + customerId + "</td></tr>");

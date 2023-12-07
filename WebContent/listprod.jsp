@@ -21,7 +21,6 @@
             </div>
             <div class="col-md-2">
                 <select class="form-control" id="category" name="category">
-                    <!-- Add your categories here -->
                     <option value="all">All</option>
                     <option value="1">Aquatic</option>
                     <option value="2">Arboreal</option>
@@ -38,7 +37,7 @@
     <%
         String name = request.getParameter("productName");
         String category = request.getParameter("category");
-        String displayTxt;
+        String displayTxt = "";
 
         try
         {
@@ -59,18 +58,17 @@
 
             if (name != null && !name.isEmpty() && category != null && !category.equals("all")) {
                 query = "SELECT productId, productName, productPrice, productImageURL FROM product WHERE productName LIKE ? AND categoryId = ?";
-                displayTxt = "Products containing '" + name + "'";
+                displayTxt = "'" + name + "'<br></br>";
             } 
             else if (name != null && !name.isEmpty()) {
                 query = "SELECT productId, productName, productPrice, productImageURL FROM product WHERE productName LIKE ?";
-                displayTxt = "Products containing '" + name + "'";
+                displayTxt = "'" + name + "'<br></br>";
             } 
             else if (category != null && !category.equals("all")) {
                 query = "SELECT productId, productName, productPrice, productImageURL FROM product WHERE categoryId = ?";
-                displayTxt = "Products in category '" + category + "'";
+                displayTxt = "<br></br>";
             }
             else {
-                // Display top-selling products
                 query = "SELECT p.productId, p.productName, p.productPrice, p.productImageURL, SUM(op.quantity) AS totalSales " +
                         "FROM product p " +
                         "LEFT JOIN orderproduct op ON p.productId = op.productId " +

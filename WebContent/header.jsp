@@ -49,16 +49,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            <% String userName = (String) session.getAttribute("authenticatedUser");
+               if (userName != null) {
+                   out.println("<span class='navbar-text'>Signed in as: " + userName + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>");
+               }
+            %>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="listorder.jsp">List All Orders</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="customer.jsp">Customer Info</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="admin.jsp">Administrators</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listprod.jsp">Shop</a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="showcart.jsp">Cart</a>
                 </li>
@@ -71,11 +74,6 @@
                     <a class="nav-link" href="logout.jsp">Log out</a>
                 </li>
             </ul>
-            <% String userName = (String) session.getAttribute("authenticatedUser");
-               if (userName != null) {
-                   out.println("<span class='navbar-text'>Signed in as: " + userName + "</span>");
-               }
-            %>
         </div>
     </div>
 </nav>
